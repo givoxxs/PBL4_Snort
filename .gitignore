@@ -1,0 +1,28 @@
+# Môi trường ảo
+venv/
+.venv/
+
+# Các file Python bytecode
+__pycache__/
+**/__pycache__
+*.pyc
+
+# Các file cấu hình và tài nguyên cá nhân
+*.env
+*.db
+*.log
+backup/
+
+# Thư mục thử nghiệm và log riêng cho Windows
+assets/
+
+# Thư mục log (chỉ dùng khi chạy trên Ubuntu)
+logs/alert_csv.txt
+
+# Các file tạm khác
+.DS_Store
+.idea/
+.vscode/
+*.sh
+threats.txt
+
