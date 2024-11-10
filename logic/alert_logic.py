@@ -1,4 +1,4 @@
-from utils.alert_reader import AlertReader
+from utils import AlertReader
 
 class AlertLogic:
     def __init__(self, file_path):

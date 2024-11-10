@@ -3,7 +3,18 @@ class AlertReader:
         self.file_path = file_path
 
     def read_alerts(self, month="all"):
-        # Read and filter alerts based on the month
+        alerts = []
         with open(self.file_path, "r") as file:
-            data = [line.strip().split(",") for line in file]
-        return data  # Adjust filtering by month as needed
+            lines = file.readlines()
+            for line in lines[1:]:  # Skip header
+                alert = self._parse_alert_line(line.strip())
+                if month == "all" or alert[0][:2] == month:
+                    alerts.append(alert)
+        return alerts
+
+    def _parse_alert_line(self, line):
+        data = line.split(",")
+        return (
+            data[0], data[1], data[2], data[3], data[4], data[5], data[6],
+            data[7], data[8], data[9], data[10], data[11]
+        )
